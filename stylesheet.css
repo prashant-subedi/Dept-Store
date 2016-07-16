@@ -1,0 +1,49 @@
+body {
+	margin: 0;
+	padding:0;
+	border: 0;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+.ux-grey {
+	background-color: grey;
+}
+.ux-container {
+	width: 100%;
+	padding: 5px;
+	margin: 5px;
+}
+
+.ux-align-center {
+	margin: 0 auto 0;
+
+}
+.ux-text-align-center {
+	text-align: center;
+}
+
+.ux-form {
+	height: auto;
+	width: auto;
+}
+
+.ux-form-element {
+	display: block;
+	padding: 5px;
+	margin: 5px;
+}
+
+.ux-block {
+	display: block;
+	padding: 5px;
+	margin: 5px;
+}
+
+.ux-inline-block {
+	display: inline-block;
+	padding: 5px;
+	margin: 5px;
+}
