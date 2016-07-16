@@ -166,7 +166,7 @@ CREATE TABLE RelProdSales(
 );
 
 #Who ever does the sales, is the delivery person
-CREATE TABLE  DELIVERY(
+CREATE TABLE  Delivery(
 	sales_id INTEGER UNSIGNED,
 	customer_id INTEGER UNSIGNED,
 	delivary_location VARCHAR(100),
