@@ -10,7 +10,9 @@ if (isset($_POST['username'])&&isset($_POST['password'])){
         if ( $qr->num_rows==1 ){
              session_start();
              $_SESSION['username'] = $_POST['username'];
-             header('Location: /dept_store');
+             $p=$qr->fetch_assoc();
+             $_SESSION['level']=$p['level'];
+            header('Location: /dept_store');
         }else{
             echo "Please enter a valid username and password<br>";
         }

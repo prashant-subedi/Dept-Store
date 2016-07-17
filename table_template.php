@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php
+require_once("config.php");
+$query="SELECT employee_id,employee_first_name,employee_last_name from Employee;";
+if(!($emp=$database->query($query))) {
+    die("Database Error");
+}
+?>
 <html>
 <head>
     <title>Products | Department Store Management System</title>
@@ -23,69 +30,26 @@
             <tr class="w3-text-teal">
                 <th>Employee Id</th>
                 <th>Employee Name</th>
-                <th>Date of Join</th>
-                <th>City</th>
-                <th>Street</th>
-                <th>Contact No.</th>
-                <th>Id Type</th>
-                <th>Card No.</th>
             </tr>
-
-            <tr>
-                <td>1</td>
-                <td>Sandesh Shrestha</td>
-                <td>July 7, 2016</td>
-                <td>Kathmandu</td>
-                <td>Kapan</td>
-                <td>9843638926</td>
-                <td>Manager</td>
-                <td>65</td>
-            </tr>
-
-            <tr>
-                <td>1</td>
-                <td>Sandesh Shrestha</td>
-                <td>July 7, 2016</td>
-                <td>Kathmandu</td>
-                <td>Kapan</td>
-                <td>9843638926</td>
-                <td>Manager</td>
-                <td>65</td>
-            </tr>
-
-            <tr>
-                <td>1</td>
-                <td>Sandesh Shrestha</td>
-                <td>July 7, 2016</td>
-                <td>Kathmandu</td>
-                <td>Kapan</td>
-                <td>9843638926</td>
-                <td>Manager</td>
-                <td>65</td>
-            </tr>
-
-            <tr>
-                <td>1</td>
-                <td>Sandesh Shrestha</td>
-                <td>July 7, 2016</td>
-                <td>Kathmandu</td>
-                <td>Kapan</td>
-                <td>9843638926</td>
-                <td>Manager</td>
-                <td>65</td>
-            </tr>
+            <?php
+            while($employee=$emp->fetch_assoc()){
+             echo "<tr>
+                    <td>".$employee["employee_id"]."</td>
+                    <td>
+                    <a href=\"/dept_store/employee_profile.php?id=".$employee["employee_id"]."\">".
+                     $employee["employee_last_name"]." ".$employee["employee_first_name"]."
+                    </td>
+                    
+                    
+                </tr>";
+            }
+                ?>
         </table>
     </div>
     <!-- Pagination -->
     <div class=" w3-margin w3-center">
         <ul class="w3-pagination">
-            <li><a href="#">&laquo;</a></li>
-            <li><a class="w3-teal" href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">&raquo;</a></li>
+            <?php pagination(20,5,"",1)?>
         </ul>
     </div>
 

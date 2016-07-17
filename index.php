@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<?php require_once "config.php"; ?>
+<?php require_once "config.php";
+?>
 <html>
 <head>
     <title>Welcome | Department Store Management System</title>
@@ -22,7 +23,7 @@
                 <div class="ux-inline-block">
                     <button class="w3-btn w3-teal w3-hover-blue">
                         <div class="w3-section" style="width:200px;">
-                            <span>View Products</span>
+                            <span>Product Sale</span>
                         </div>
                     </button>
                 </div>
@@ -47,7 +48,7 @@
                     <div class="ux-inline-block ">
                         <button class="w3-btn w3-teal w3-hover-blue">
                             <div class="w3-section" style="width:200px;">
-                                Manage Employees
+                                View Employees
                             </div>
                         </button>
                     </div>

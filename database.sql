@@ -110,7 +110,7 @@ CREATE TABLE empPhone(
 );
 
 CREATE TABLE RelManages(
-	employee_id INTEGER UNSIGNED,
+	employee_id INTEGER UNSIGNED PRIMARY KEY,
 	manager_id INTEGER UNSIGNED,
 	FOREIGN KEY(employee_id) REFERENCES Employee(employee_id),
 	FOREIGN KEY(manager_id) REFERENCES Employee(employee_id)
