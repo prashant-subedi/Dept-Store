@@ -31,7 +31,7 @@
                 <div class="ux-inline-block">
                     <button class="w3-btn w3-teal w3-hover-blue">
                         <div class="w3-section" style="width:200px;">
-                            <span>View Inventory</span>
+                            <span>Products</span>
                         </div>
                     </button>
                 </div>
@@ -69,7 +69,23 @@
                                 </div>
                             </button>
                         </div>
+                    </div>
+                    <div class="w3-row w3-center">
+                        <div class="ux-inline-block">
+                            <button class="w3-btn w3-teal w3-hover-blue">
+                                <div class="w3-section" style="width:200px;">
+                                    Contracted Costumers
+                                </div>
+                            </button>
+                        </div>
 
+                        <div class="ux-inline-block ">
+                            <button class="w3-btn w3-teal w3-hover-blue">
+                                <div class="w3-section" style="width:200px;">
+                                    Inventory
+                                </div>
+                            </button>
+                        </div>
 
 
                     </div>

@@ -49,8 +49,6 @@ if (isset($_POST['username'])&&isset($_POST['password'])){
         <p class="w3-text-grey w3-small">A DBMS Mini Project for COMP 232</p>
         <p class="w3-text-grey w3-small">Powered by Team Sudo <br> CE 2nd Year 2nd Semester <br>Kathmandu University <br> Dhulikhel, Kavre.</p>
 
-
-
     </div>
 </div>
 

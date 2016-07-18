@@ -30,8 +30,8 @@ CREATE TABLE  ProductLocation(
 );
 
 CREATE TABLE ProductType(
-	product_type_id INTEGER UNSIGNED PRIMARY KEY,
-	product_category VARCHAR(30),
+	product_type_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	product_category VARCHAR(30),#IT MEANS NAME
 	product_price INTEGER,
 	manufacturer_id INTEGER UNSIGNED,
 	location_id SMALLINT UNSIGNED,
@@ -148,7 +148,7 @@ CREATE TABLE Sales(
 	sales_time TIMESTAMP,
 	sales_cost INTEGER,
 	customer_id INTEGER UNSIGNED,
-	employee_id INTEGER UNSIGNED,#SET RESTRICTION IN BACK END..NOT NULL
+	employee_id INTEGER UNSIGNED,#SET RESTRICTION IN BACK END NOT NULL
 	FOREIGN KEY(customer_id) REFERENCES Customer(customer_id) 
 	ON DELETE SET NULL,
 	FOREIGN KEY(employee_id) REFERENCES Employee(employee_id)
@@ -214,4 +214,10 @@ CREATE TABLE DailyIncome(
 CREATE TABLE MonthlyIncome(
 	month DATE,#SET DAY AS 00
 	net_profit INTEGER
+);
+CREATE  TABLE CurrentTransaction(
+	product_id BIGINT UNSIGNED PRIMARY KEY,
+	sales_id INTEGER UNSIGNED,
+	FOREIGN KEY(product_id) REFERENCES Product(product_id),
+	FOREIGN KEY (sales_id) REFERENCES  Sales(sales_id)
 );

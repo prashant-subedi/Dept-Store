@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php
 require_once("config.php");
-$query="SELECT employee_id,employee_first_name,employee_last_name from Employee;";
-if(!($emp=$database->query($query))) {
+$query="SELECT customer_id,customer_first_name,customer_last_name from Customer;";
+if(!($cus=$database->query($query))) {
     die("Database Error");
 }
 ?>
@@ -28,22 +28,23 @@ if(!($emp=$database->query($query))) {
     <div class="w3-responsive">
         <table class="w3-table-all"> <!-- Make the table bordered!!! -->
             <tr class="w3-text-teal">
-                <th>Employee Id</th>
-                <th>Employee Name</th>
+                <th>Customer Id</th>
+                <th>Customer  Name</th>
             </tr>
             <?php
-            while($employee=$emp->fetch_assoc()){
-             echo "<tr>
-                    <td>".$employee["employee_id"]."</td>
+            while($customer=$cus->fetch_assoc()){
+                extract($customer);
+                echo "<tr>
+                    <td>$customer_id</td>
                     <td>
-                    <a href=\"/dept_store/employee_profile.php?id=".$employee["employee_id"]."\">".
-                     $employee["employee_last_name"]." ".$employee["employee_first_name"]."
+                    <a href=\"/dept_store/customer_profile.php?id=$customer_id\">
+                    $customer_first_name  $customer_last_name
                     </td>
                     
                     
                 </tr>";
             }
-                ?>
+            ?>
         </table>
     </div>
     <!-- Pagination ..Implemnt Later..Got No Time To Do It! -->
