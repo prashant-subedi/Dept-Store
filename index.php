@@ -21,74 +21,95 @@
         <div class="w3-container">
             <div class="w3-row w3-center">
                 <div class="ux-inline-block">
+                    <a href="/dept_store/sale.php">
                     <button class="w3-btn w3-teal w3-hover-blue">
                         <div class="w3-section" style="width:200px;">
                             <span>Product Sale</span>
                         </div>
                     </button>
+                    </a>
                 </div>
 
                 <div class="ux-inline-block">
+                <a href="/dept_store/product.php">
                     <button class="w3-btn w3-teal w3-hover-blue">
                         <div class="w3-section" style="width:200px;">
                             <span>Products</span>
                         </div>
-                    </button>
+                    </button></a>
                 </div>
 
                 <div class="w3-row w3-center">
                     <div class="ux-inline-block">
+                        <a href="/dept_store/viewsales.php">
                         <button class="w3-btn w3-teal w3-hover-blue">
                             <div class="w3-section" style="width:200px;">
                                 View Sales
                             </div>
                         </button>
+                            </a>
                     </div>
 
                     <div class="ux-inline-block ">
+                    <a href="/dept_store/employee.php">
                         <button class="w3-btn w3-teal w3-hover-blue">
                             <div class="w3-section" style="width:200px;">
                                 View Employees
                             </div>
-                        </button>
+                        </button></a>
                     </div>
+
 
                     <div class="w3-row w3-center">
                         <div class="ux-inline-block">
-                            <button class="w3-btn w3-teal w3-hover-blue">
-                                <div class="w3-section" style="width:200px;">
-                                    Manage Vacations
-                                </div>
-                            </button>
-                        </div>
-
-                        <div class="ux-inline-block ">
-                            <button class="w3-btn w3-teal w3-hover-blue">
-                                <div class="w3-section" style="width:200px;">
-                                    View Orders
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="w3-row w3-center">
-                        <div class="ux-inline-block">
+                        <a href="/dept_store/costumer.php">
                             <button class="w3-btn w3-teal w3-hover-blue">
                                 <div class="w3-section" style="width:200px;">
                                     Contracted Costumers
                                 </div>
-                            </button>
+                            </button></a>
                         </div>
 
                         <div class="ux-inline-block ">
-                            <button class="w3-btn w3-teal w3-hover-blue">
+                            <a href="/dept_store/inventorydealer.php"><button class="w3-btn w3-teal w3-hover-blue">
                                 <div class="w3-section" style="width:200px;">
                                     Inventory
                                 </div>
-                            </button>
+                            </button></a>
                         </div>
 
+                        <div class="w3-row w3-center">
+                        <div class="ux-inline-block">
+                        <a href="/dept_store/inhouse.php">
+                            <button class="w3-btn w3-teal w3-hover-blue">
+                                <div class="w3-section" style="width:200px;">
+                                    Inhouse Duty
+                                </div>
+                            </button></a>
+                        </div>
 
+                        <div class="ux-inline-block ">
+                            <a href="/dept_store/dealer.php"><button class="w3-btn w3-teal w3-hover-blue">
+                                <div class="w3-section" style="width:200px;">
+                                    Manage Dealers
+                                </div>
+                            </button></a>
+                        </div>
+
+                            <div class="w3-row w3-center">
+                                <div class="ux-inline-block">
+                                    <a href="/dept_store/vacations.php">
+                                        <button class="w3-btn w3-teal w3-hover-blue">
+                                            <div class="w3-section" style="width:200px;">
+                                                Manage Vacations
+                                            </div>
+                                        </button></a>
+                                </div>
+
+                            </div>
                     </div>
+                    
+                    
                 </div>
 
                 <div class=" w3-container w3-section w3-center footer">

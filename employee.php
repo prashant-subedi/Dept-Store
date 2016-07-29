@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php
 require_once("config.php");
-$query="SELECT customer_id,customer_first_name,customer_last_name from Customer;";
-if(!($cus=$database->query($query))) {
+$query="SELECT employee_id,employee_first_name,employee_last_name from Employee;";
+if(!($emp=$database->query($query))) {
     die("Database Error");
 }
 ?>
@@ -18,19 +18,18 @@ if(!($cus=$database->query($query))) {
     <div class="w3-center">
         <p class="w3-section w3-text-teal w3-large">Welcome <br>to <br>Department Store Management System</p>
 			<span class="w3-section w3-text-grey w3-xlarge">
-			Costumers
+			Employees
 		</span>
     </div>
     <div class="w3-section">
-        <a class="w3-text-teal" href="/dept_store/">Back</a>
-        <a class="w3-text-teal" href="/dept_store/addcostumer.php">Add Costumer</a>
-        <a class="w3-text-teal" href="/dept_store/updatecostumer.php">Update Information</a>
+        <a class="w3-text-teal" href="/dept_store/insertemployee.php">Add an Employee</a>
+                <a class="w3-text-teal" href="/dept_store/updateemployee.php">Update Information</a>
     </div>
-    
-    				
+    <div class="w3-section">
+				<a class="w3-text-teal" href="/dept_store/">Back</a>
 
 				<form class="w3-container w3-right">
-					<input type="text" name="search" placeholder="Search by customer">
+					<input type="text" name="search" placeholder="Search by Employee">
 					<button class="w3-btn w3-teal">Search</button>
 					
 					
@@ -40,11 +39,10 @@ if(!($cus=$database->query($query))) {
     <div class="w3-responsive">
         <table class="w3-table-all"> <!-- Make the table bordered!!! -->
             <tr class="w3-text-teal">
-                <th>Customer Id</th>
-                <th>Customer  Name</th>
+                <th>Employee Id</th>
+                <th>Employee Name</th>
             </tr>
             
-                        
 <?php
 $conn = mysqli_connect("localhost", "root", "", "dept_store");         
 
@@ -58,22 +56,21 @@ $value = $_GET['search'];
 }
 if($value !=""){
 
-$sql = "SELECT customer_id,customer_first_name,customer_last_name FROM Customer WHERE customer_first_name LIKE '%$value%'";
-
+$sql = "SELECT employee_id,employee_first_name, employee_last_name FROM Employee
+WHERE employee_first_name LIKE '%$value%'";
 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
-    while($customer = $result->fetch_assoc()) {
-    extract($customer);
-     echo "<tr>
-                    <td>".$customer["customer_id"]."</td>
+    while($employee = $result->fetch_assoc()) {
+    extract($employee);
+    echo "<tr>
+                    <td>".$employee["employee_id"]."</td>
                     <td>
-                    <a href=\"/dept_store/customer_profile.php?id=$customer_id\">
-                    $customer_first_name  $customer_last_name
-                    </td>
-                    
+                    <a href=\"/dept_store/employee_profile.php?id=$employee_id\">
+                    $employee_last_name $employee_first_name
+                    </td>                    
                     
                 </tr>";
    
@@ -85,23 +82,27 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
        }
-            else {
-            while($customer=$cus->fetch_assoc()){
-                extract($customer);
+       else{     
+            while($employee=$emp->fetch_assoc()){
+                extract($employee);
                 echo "<tr>
-                    <td>$customer_id</td>
+                    <td>".$employee["employee_id"]."</td>
                     <td>
-                    <a href=\"/dept_store/customer_profile.php?id=$customer_id\">
-                    $customer_first_name  $customer_last_name
-                    </td>
-                    
+                    <a href=\"/dept_store/employee_profile.php?id=$employee_id\">
+                    $employee_last_name $employee_first_name
+                    </td>                    
                     
                 </tr>";
             }
-            }
-            ?>
+ 
+}
+          ?>
         </table>
     </div>
+    
+    
+
+					
     <!-- Pagination ..Implemnt Later..Got No Time To Do It! -->
     <div class=" w3-margin w3-center">
         <ul class="w3-pagination">
@@ -111,8 +112,11 @@ $conn->close();
 
 
 </div>
-
 <div class=" w3-container w3-section w3-center footer">
+    
+			
+					
+
 
     <div class="w3-section">
         <a class="w3-text-teal" href="/dept_store/logout.php">Logout</a>
@@ -120,9 +124,6 @@ $conn->close();
     <div>
         <p class="w3-text-grey w3-small">A DBMS Mini Project for COMP 232</p>
         <p class="w3-text-grey w3-small">Powered by Team Sudo <br> CE 2nd Year 2nd Semester <br>Kathmandu University <br> Dhulikhel, Kavre.</p>
-
-
-
     </div>
 </div>
 </body>
